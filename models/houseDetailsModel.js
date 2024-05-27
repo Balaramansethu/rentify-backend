@@ -1,7 +1,16 @@
 const mongoose = require('mongoose')
 
-const HouseDetailsSchema = new mongoose.Schema(
+const houseDetailsSchema = new mongoose.Schema(
     {
+      
+        place : {
+            type:String,
+            required:true
+        },
+        area : {
+            type:String,
+            required:true
+        },
         bhk : {
             type:String,
             required:true
@@ -10,17 +19,28 @@ const HouseDetailsSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        owners : {
+        bathroom : {
             type:String,
             required:true
         },
-        rent : {
+        hospitalNearby : {
+            type:String,
+            required:true
+        },
+        collegeNearby : {
+            type:String,
+            required:true
+        },
+        mobile : {
             type:String,
             required:true
         }
     },
     {
+        timestamps: true
+    },
+    {
         collection : 'houseDetails'
     }
 )
-module.exports = mongoose.model('housDetails', HouseDetailsSchema)
+module.exports = mongoose.model('housDetails', houseDetailsSchema)
